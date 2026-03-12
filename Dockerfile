@@ -1,11 +1,13 @@
-# ✅ Image Alpine (plus légère et sécurisée) - Version la plus récente
+# ✅ Image Alpine (plus légère et sécurisée)
 FROM node:22-alpine
 
 WORKDIR /app
 
 # ✅ Copie des dépendances d'abord (cache)
 COPY src/package*.json ./
-RUN npm ci --only=production && npm cache clean --force
+
+# Use npm install instead of npm ci since no package-lock.json in repo
+RUN npm install --omit=dev && npm cache clean --force
 
 COPY src/ ./
 

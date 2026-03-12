@@ -41,7 +41,6 @@ app.post('/api/login',
 
         const { username, password } = req.body;
 
-        // Ici : vérification réelle avec bcrypt + DB
         if (username === process.env.ADMIN_USER && password === process.env.ADMIN_PASS) {
             const token = jwt.sign(
                 { username },
