@@ -1,0 +1,5 @@
+node_modules/
+.env
+image.tar
+audit.json
+security-report.json
