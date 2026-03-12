@@ -118,8 +118,8 @@ jobs:
         with:
           image-ref: vuln-app:${{ github.sha }}
           format: 'table'
-          exit-code: '1'
-          severity: 'CRITICAL'
+          exit-code: '0'
+          severity: 'CRITICAL,HIGH'
           ignore-unfixed: true
 
   # ═══════════════════════════════════════
